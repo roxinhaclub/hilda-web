@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#110817" />
+  <meta name="description" content="Meet Hilda Senpai: games, anime, cosplay, geek culture and a healthy dose of chaos. ♡" />
+  <title>Hilda Senpai ♡ | Gamer, Otaku & Chaos</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #110817; --bg2: #190a26; --panel: #261034; --panel2: #311343;
+      --accent: #cd68f8; --pink: #f0a1ff; --lilac: #e6bbff; --text: #fceaff;
+      --muted: #d5afd9; --border: #9f42ce; --shadow: 0 0 22px #b64ae065;
+      --main: 'DM Sans', 'Trebuchet MS', sans-serif;
+      --script: 'Pacifico','Segoe Script', 'Brush Script MT', cursive;
+    }
+    * {box-sizing:border-box}
+    html {scroll-behavior:smooth; scroll-padding-top:90px}
+    body { margin:0; overflow-x:hidden; min-width:320px; color:var(--text); font-family:var(--main);
+      background: radial-gradient(ellipse at 52% 0%,#341443 0%,transparent 31%),
+        radial-gradient(ellipse at 8% 60%,#240e31 0%,transparent 36%), var(--bg); }
+    ::selection {background:#d06efa;color:#16071e}
+    a {color:inherit;text-decoration:none} button {font:inherit;cursor:pointer}
+    button, a { -webkit-tap-highlight-color:transparent }
+    :focus-visible {outline:2px solid #f4b5ff;outline-offset:4px;border-radius:8px}
+    img {display:block;max-width:100%}
+    .sr-only {position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .container {width:min(1150px,calc(100% - 56px));margin-inline:auto}
+    .script {font-family:var(--script);font-weight:400;letter-spacing:.005em;color:var(--pink);text-shadow:0 0 18px #bf42e75e}
+    .spark {color:var(--accent);filter:drop-shadow(0 0 9px #ae50dca8)}
+    .icon {width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+    .icon.fill {fill:currentColor;stroke:none}
+    .icon-lg {width:34px;height:34px}
+    .icon-xl {width:48px;height:48px}
+    .sprites {position:absolute;width:0;height:0;overflow:hidden}
+
+    /* Navigation */
+    .site-header {height:78px;position:sticky;top:0;z-index:50;border-bottom:1px solid #75369580;
+      background:#16091fdd;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+    .header-inner {height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand {display:inline-flex;align-items:center;gap:13px;white-space:nowrap}
+    .brand .icon {width:39px;height:39px;color:var(--accent);filter:drop-shadow(0 0 12px #cb5cfa9e)}
+    .brand-name {font-family:var(--script);color:var(--pink);font-size:25px;line-height:1.4}
+    .brand-heart {font-size:29px;color:var(--accent)}
+    .desktop-nav {display:flex;align-items:center;gap:27px;margin-left:auto}
+    .desktop-nav a {font-size:14px;color:#ebc9f5;font-weight:600;transition:color .2s}
+    .desktop-nav a:hover {color:var(--accent)}
+    .header-actions {display:flex;align-items:center;gap:10px}
+    .lang-btn {font-weight:800;letter-spacing:.03em;border:1px solid #8745a8;color:#f8d4ff;
+      border-radius:30px;background:#301438;padding:9px 13px;font-size:12px;min-width:68px}
+    .lang-btn:hover {background:#50215e}
+    .menu-btn {display:none;border:0;background:transparent;color:var(--accent);padding:9px}
+    .mobile-menu {display:none;position:absolute;top:78px;left:0;right:0;padding:15px 28px 23px;
+      background:#1f0c2af5;border-bottom:1px solid #8e42b3;box-shadow:0 12px 30px #07020b85}
+    .mobile-menu.is-open {display:grid;gap:0}
+    .mobile-menu a {display:block;padding:14px 4px;border-bottom:1px solid #7b3d9438;font-weight:650}
+
+    /* Hero */
+    .hero {position:relative;min-height:610px;isolation:isolate;overflow:hidden;border-bottom:1px solid #7e3ca05a}
+    .hero:before {content:"";position:absolute;inset:0;z-index:-2;background:
+      radial-gradient(circle at 76% 30%,#65157966,transparent 46%),
+      radial-gradient(circle at 23% 68%,#3e185342,transparent 43%)}
+    .hero-inner {display:flex;align-items:center;min-height:610px;position:relative}
+    .hero-art {position:absolute;width:min(56%,560px);right:0;bottom:-8px;z-index:1;
+      filter:drop-shadow(0 0 22px #8f27a34d) drop-shadow(0 0 45px #af43e07a);pointer-events:none;
+      opacity:.98;transform-origin:right bottom}
+    .hero-inner::after {content:'';position:absolute;right:3%;bottom:3%;width:min(43vw,470px);height:min(43vw,470px);
+      border-radius:50%;z-index:0;pointer-events:none;background:radial-gradient(circle,#8e2bc45e 0%,#6b1d9250 28%,#3e124f1c 55%,transparent 73%);
+      filter:blur(6px)}
+    .hero-copy {position:relative;z-index:2;width:52%;padding:53px 0 62px}
+    .hero-greeting {display:inline-flex;align-items:center;gap:9px;margin:0 0 9px;
+      color:var(--accent);font-size:15px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    .hero h1 {font-size:clamp(43px,5.4vw,73px);line-height:1.32;margin:0 0 14px;
+      max-width:700px;letter-spacing:-.035em;font-weight:400}
+    .hero-copy>p:not(.hero-greeting) {color:#f0d3f8;font-size:clamp(16px,1.5vw,21px);
+      line-height:1.52;margin:0 0 25px;max-width:460px;text-wrap:balance}
+    .hero .heart-deco {display:inline-block;color:var(--accent);font-size:clamp(42px,4.5vw,60px);transform:rotate(-8deg)}
+    .cta {display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:57px;
+      padding:12px 25px;color:#230c2c;background:linear-gradient(100deg,#cd65f4,#e486ff);
+      border:1px solid #e59aff;box-shadow:0 0 10px #ce61fa,0 0 24px #c14def6c;
+      border-radius:50px;font-weight:800;font-size:16px;transition:transform .2s,box-shadow .2s}
+    .cta:hover {transform:translateY(-3px);box-shadow:0 0 18px #db79ff,0 0 30px #c14def90}
+    .cta svg {width:22px;height:22px}
+    .socials {display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:24px}
+    .social-btn {display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;
+      border:1.7px solid #ae53e0;border-radius:50%;background:#1b0b29b5;color:#f7e9ff;
+      transition:transform .2s,background .2s,box-shadow .2s}
+    .social-btn:hover {transform:translateY(-4px);background:#652582;box-shadow:0 0 18px #b445f977}
+    .social-btn .icon {width:23px;height:23px}
+    .social-btn.is-liked {background:#963ac2;color:white}
+    .star-hero {position:absolute;color:#c15ef2;font-size:43px;text-shadow:0 0 15px #a34ad9;user-select:none}
+    .star-one {left:4%;top:12%}.star-two {left:44%;top:65%}.star-three {right:4%;top:18%}
+
+    /* About */
+    .about {padding-top:35px}
+    .about-card {position:relative;min-height:290px;border:1.7px solid var(--border);border-radius:30px;
+      background:linear-gradient(111deg,#211029 0%,#270e37 56%,#360f46 100%);
+      overflow:hidden;box-shadow:inset 0 0 30px #65218738}
+    .about-copy {position:relative;z-index:2;padding:33px 38px 35px;max-width:62%}
+    .about h2 {font-size:clamp(27px,3vw,40px);margin:0 0 13px}
+    .about h2:before {content:'✦';font-family:var(--main);font-size:35px;color:var(--accent);margin-right:14px}
+    .about p {font-size:17px;line-height:1.65;color:#efd8f7;margin:0 0 16px}
+    .text-link {display:inline-flex;align-items:center;gap:10px;color:#d884ff;text-decoration:underline;font-weight:800}
+    .text-link:hover {color:#f4baff}
+    .about-image {position:absolute;right:-7px;bottom:-3px;width:min(46%,395px);max-height:97%;object-fit:contain;object-position:right bottom;z-index:0;
+      filter:drop-shadow(0 0 14px #b843d44c)}
+    .about-card::after {content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+      background:linear-gradient(90deg,#211029e8 0%,#211029a8 35%,#21102900 78%)}
+    .about-more {margin-top:13px;color:#ecd4f4;font-size:15px;line-height:1.6;display:none}
+    .about-more.visible {display:block}
+
+    /* Interests */
+    .interests {padding-top:48px}
+    .section-heading {display:flex;align-items:center;gap:16px;justify-content:center;margin:0 0 23px}
+    .section-heading:before,.section-heading:after {content:'';height:1.5px;flex:1;background:linear-gradient(90deg,transparent,var(--accent))}
+    .section-heading:after {transform:scaleX(-1)}
+    .section-heading h2 {font-size:clamp(26px,3.1vw,40px);line-height:1.45;text-align:center;margin:0;white-space:nowrap}
+    .section-heading span {font-size:26px;color:var(--accent)}
+    .interest-grid {display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+    .interest-card {display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;
+      min-height:146px;border:1.4px solid #9545bc;border-radius:23px;padding:20px 9px;
+      background:linear-gradient(145deg,#321342,#261132);color:#efcdf9;
+      transition:transform .2s,box-shadow .2s,border-color .2s}
+    .interest-card:hover {transform:translateY(-5px);border-color:#e093ff;box-shadow:0 0 19px #ad42d649}
+    .interest-card .icon {width:46px;height:46px;color:var(--accent);stroke-width:1.9}
+    .interest-card span {font-size:16px;font-weight:650;text-align:center;line-height:1.26}
+
+    /* Connect and footer */
+    .connect {margin-top:51px;border-top:1.5px solid #a64adb;border-bottom:1.5px solid #a64adb;
+      background:radial-gradient(ellipse at 100% 100%,#48145f7b,transparent 55%),#1a0b25;position:relative;overflow:hidden}
+    .connect-inner {min-height:174px;display:flex;align-items:center;justify-content:space-between;gap:25px;position:relative;padding-block:25px}
+    .connect-text {text-align:center;flex:1;padding-left:130px}
+    .connect-text h2 {font-size:clamp(24px,2.7vw,36px);line-height:1.5;margin:0 0 3px}
+    .connect-text p {font-size:16px;color:#edc9f5;margin:0}
+    .connect-pup {position:absolute;width:145px;left:0;bottom:-13px;filter:drop-shadow(0 0 12px #bb5aff7a)}
+    .outline-cta {border:2px solid #ea6cff;border-radius:50px;padding:12px 23px;color:var(--pink);
+      background:#1d0b29;font-weight:800;font-size:16px;display:inline-flex;align-items:center;gap:12px;
+      box-shadow:0 0 10px #dc49f7a8,inset 0 0 12px #b245d855;white-space:nowrap;transition:transform .2s}
+    .outline-cta:hover {transform:translateY(-3px);background:#3d1552}
+    .footer {padding:28px 20px 106px;text-align:center;color:#ba91c4;font-size:13px}
+    .footer strong {color:#e7b5fa}
+    .bottom-nav {display:none}
+
+    .toast {position:fixed;bottom:35px;left:50%;z-index:100;transform:translate(-50%,20px);
+      width:max-content;max-width:calc(100% - 28px);padding:13px 20px;border:1px solid #a849c8;border-radius:40px;
+      color:#fce5ff;background:#38154de8;box-shadow:0 8px 26px #0008;opacity:0;pointer-events:none;
+      transition:opacity .25s,transform .25s;text-align:center;font-size:14px}
+    .toast.show {opacity:1;transform:translate(-50%,0)}
+
+
+    /* Tablet */
+    @media (max-width:960px) {
+      .desktop-nav {gap:16px}.desktop-nav a {font-size:13px}
+      .brand-name {font-size:22px}
+      .hero {min-height:535px}.hero-inner {min-height:535px}
+      .hero-art {width:min(61%,500px);right:-2%}.hero-copy {width:57%}
+      .interest-grid {gap:12px}.interest-card {min-height:131px}
+      .connect-text {padding-left:120px}
+    }
+    /* Mobile */
+    @media (max-width:720px) {
+      html {scroll-padding-top:73px}
+      .container {width:calc(100% - 34px)}
+      .site-header {height:68px}.header-inner {gap:10px}
+      .brand {gap:9px}.brand .icon {width:34px;height:34px}
+      .brand-name {font-size:20px}.brand-heart {font-size:24px}
+      .desktop-nav {display:none}.menu-btn {display:inline-flex}.mobile-menu {top:68px}
+      .lang-btn {padding:8px 11px;min-width:62px}
+      .hero {min-height:584px}
+      .hero-inner {min-height:584px;align-items:flex-start}
+      .hero-art {width:385px;max-width:none;right:-74px;bottom:-2px;opacity:1;z-index:1;
+        filter:drop-shadow(0 0 24px #8f27a36a) drop-shadow(0 0 48px #af43e092)}
+      .hero::after {content:'';pointer-events:none;position:absolute;inset:0;z-index:0;
+        background:linear-gradient(90deg,#130819 0%,#130819e8 20%,#1308198c 47%,transparent 73%),
+          radial-gradient(circle at 78% 40%,#8b29bd44 0%,transparent 35%);
+        mask-image:linear-gradient(to bottom,transparent 4%,#000 21%,#000 90%,transparent 100%)}
+      .hero-copy {width:100%;padding:59px 0 40px;z-index:2;max-width:340px}
+      .hero-greeting {font-size:12px;letter-spacing:.12em}
+      .hero h1 {font-size:clamp(35px,8.4vw,49px);max-width:255px;margin-bottom:15px;line-height:1.35}
+      .hero .heart-deco {font-size:40px}
+      .hero-copy>p:not(.hero-greeting) {font-size:17px;line-height:1.43;max-width:240px;margin-bottom:20px}
+      .cta {min-height:50px;padding:10px 15px;font-size:13px;gap:8px;max-width:100%}
+      .cta svg {width:17px;height:17px}
+      .socials {gap:8px;margin-top:19px;max-width:340px}
+      .social-btn {width:42px;height:42px}.social-btn .icon {width:21px;height:21px}
+      .star-one {left:4%;top:5%}.star-two {display:none}.star-three {right:6%;top:26%}
+      .about {padding-top:16px}
+      .about-card {min-height:266px;border-radius:24px}
+      .about-copy {padding:19px 17px 25px;max-width:72%}
+      .about h2 {font-size:27px;margin-bottom:7px}.about h2:before {font-size:23px;margin-right:7px}
+      .about p {font-size:14px;line-height:1.52;margin-bottom:8px}
+      .text-link {font-size:13px}
+      .about-image {width:66%;max-height:84%;right:-6px;bottom:0;object-fit:contain;object-position:right bottom}
+      .about-more {font-size:13px}
+      .interests {padding-top:31px}
+      .section-heading {gap:8px;margin-bottom:15px}.section-heading h2 {font-size:clamp(20px,6vw,29px)}
+      .section-heading span {font-size:17px}
+      .interest-grid {grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}
+      .interest-card {min-height:94px;gap:7px;border-radius:16px;padding:11px 2px}
+      .interest-card .icon {width:31px;height:31px}.interest-card span {font-size:clamp(10px,2.8vw,13px);line-height:1.22}
+      .connect {margin-top:30px}
+      .connect-inner {min-height:157px;gap:7px}
+      .connect-pup {width:105px;left:-10px;bottom:-6px}
+      .connect-text {padding-left:67px}
+      .connect-text h2 {font-size:22px;line-height:1.55}.connect-text p {font-size:12px;line-height:1.4}
+      .outline-cta {font-size:12px;padding:10px 13px;gap:6px}.outline-cta .icon {width:17px;height:17px}
+      .footer {padding:22px 20px 96px}
+      .bottom-nav {position:fixed;bottom:0;left:0;right:0;z-index:49;display:flex;align-items:center;justify-content:space-around;
+        height:calc(66px + env(safe-area-inset-bottom));padding:0 10px env(safe-area-inset-bottom);
+        border-top:1px solid #a248cc;background:#180a23e8;backdrop-filter:blur(18px)}
+      .bottom-nav a {display:flex;align-items:center;justify-content:center;flex:1;height:100%;color:#b64fe5}
+      .bottom-nav a:hover,.bottom-nav a.active {color:#e389ff}
+      .bottom-nav .icon {width:27px;height:27px}
+      .toast {bottom:86px}
+    }
+    @media (max-width:390px) {
+      .brand-name {font-size:18px}.brand .icon {width:30px;height:30px}.brand-heart {display:none}
+      .hero-art {right:-112px;width:360px}.hero h1 {font-size:35px;max-width:236px}
+      .social-btn {width:39px;height:39px}.socials {gap:7px}
+      .about-copy {max-width:77%}.about-image {width:67%;max-height:81%}
+      .connect-pup {width:85px}.connect-text {padding-left:45px}
+    }
+    @media (prefers-reduced-motion:reduce) {html {scroll-behavior:auto}*,*:before,*:after {transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+  <!-- To customize social links, edit SITE_CONFIG near the bottom of the document. -->
+  <svg class="sprites" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-gamepad" viewBox="0 0 24 24"><path d="M6.6 8h10.8a3.5 3.5 0 0 1 3.4 2.7l1.1 5.5a2.5 2.5 0 0 1-4 2.5l-2.8-2.3H8.9l-2.8 2.3a2.5 2.5 0 0 1-4-2.5l1.1-5.5A3.5 3.5 0 0 1 6.6 8Z"/><path d="M7 11v5M4.5 13.5h5M16.5 11.5h.01M19 14h.01"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-6.7-4.35-9.33-7.58a5.5 5.5 0 0 1 7.79-7.7L12 7.26l1.54-1.54a5.5 5.5 0 0 1 7.79 7.7C18.7 16.65 12 21 12 21Z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.8" cy="6.4" r=".9" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-twitch" viewBox="0 0 24 24"><path d="M4 2h17v13l-5 5h-4l-3 2v-2H4V2Z"/><path d="M10 7v6M16 7v6"/></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M14 2v12.4a5.3 5.3 0 1 1-5.2-5.3M14 3c1 3.9 3.3 5.3 7 5.5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M3 3 21 21M21 3 3 21M3 3h5l13 18h-5Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-7-7 7 7-7 7"/></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 3v18m-7-7 7 7 7-7"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v11h-6v-7H9v7H3Z"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6a8 8 0 0 0-9-2v16a8 8 0 0 1 9 2 8 8 0 0 1 9-2V4a8 8 0 0 0-9 2ZM12 6v16"/></symbol>
+    <symbol id="i-photo" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="2"/><circle cx="8" cy="9" r="2"/><path d="m2 18 6-6 5 4 3-3 6 5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="m2 7 10 7 10-7"/></symbol>
+    <symbol id="i-ramen" viewBox="0 0 24 24"><path d="M3 11h18a9 9 0 0 1-18 0ZM7 20h10M10 3c3 2-3 3 0 5M15 2c3 2-3 3 0 5M3 9h18"/></symbol>
+    <symbol id="i-cupcake" viewBox="0 0 24 24"><path d="M5 11h14l-2 10H7L5 11ZM7 11a4 4 0 0 1-1-7 4 4 0 0 1 6-1 4 4 0 0 1 6 1 4 4 0 0 1-1 7M12 4V2"/><path d="m10 15 1 4m4-4-1 4"/></symbol>
+    <symbol id="i-torii" viewBox="0 0 24 24"><path d="M2 5c5 3 15 3 20 0M3 9h18M7 9v13M17 9v13M7 14h10"/></symbol>
+    <symbol id="i-mask" viewBox="0 0 24 24"><path d="M3 4c6 1 9 1 9 5 0-4 3-4 9-5-.2 9-3 16-9 16S3.2 13 3 4Z"/><path d="M6.5 11c1.5-1 3-.7 4 0m3 0c1-1 2.5-1 4 0M10 16c1 1 3 1 4 0"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Hilda Senpai homepage">
+        <svg class="icon"><use href="#i-gamepad"/></svg>
+        <span class="brand-name">Hilda Senpai</span><span class="brand-heart" aria-hidden="true">♡</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#home" data-i18n="navHome">Home</a><a href="#about" data-i18n="navAbout">About</a>
+        <a href="#interests" data-i18n="navInterests">Interests</a>
+        <a href="#connect" data-i18n="navConnect">Connect</a>
+      </nav>
+      <div class="header-actions">
+        <button class="lang-btn" type="button" id="languageToggle" aria-label="Switch website language">PT / EN</button>
+        <button class="menu-btn" type="button" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><svg class="icon icon-lg"><use href="#i-menu"/></svg></button>
+      </div>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+      <a href="#home" data-i18n="navHome">Home</a><a href="#about" data-i18n="navAbout">About</a>
+      <a href="#interests" data-i18n="navInterests">Interests</a>
+      <a href="#connect" data-i18n="navConnect">Connect</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="heroTitle">
+      <div class="star-hero star-one" aria-hidden="true">✧</div><div class="star-hero star-two" aria-hidden="true">✧</div><div class="star-hero star-three" aria-hidden="true">✧</div>
+      <div class="container hero-inner">
+        <img class="hero-art" src="hero-character-polished.png" alt="Anime-style Hilda with black and blue hair, gaming headphones and a German Shepherd puppy" fetchpriority="high" />
+        <div class="hero-copy">
+          <p class="hero-greeting"><span aria-hidden="true">✦</span> <span data-i18n="greeting">Welcome to my universe</span></p>
+          <h1 class="script" id="heroTitle" data-i18n="heroTitle">Hey, I'm<br>Hilda Senpai! <span class="heart-deco">♡</span></h1>
+          <p data-i18n="heroDesc">Content creator, gamer, otaku and just a little bit chaotic. ♡</p>
+          <a class="cta" id="specialLink" href="continue.html"><span data-i18n="mainCta">What you're looking for is here 👀</span><svg class="icon"><use href="#i-arrow"/></svg></a>
+          <div class="socials" aria-label="Social media links">
+            <a class="social-btn" href="https://www.instagram.com/hilda_senpai/" data-social="instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-instagram"/></svg></a>
+            <a class="social-btn" href="#connect" data-social="youtube" aria-label="YouTube"><svg class="icon"><use href="#i-youtube"/></svg></a>
+            <a class="social-btn" href="#connect" data-social="twitch" aria-label="Twitch"><svg class="icon"><use href="#i-twitch"/></svg></a>
+            <a class="social-btn" href="#connect" data-social="tiktok" aria-label="TikTok"><svg class="icon"><use href="#i-tiktok"/></svg></a>
+            <a class="social-btn" href="#connect" data-social="x" aria-label="X"><svg class="icon"><use href="#i-x"/></svg></a>
+            <button class="social-btn" id="likeButton" type="button" aria-label="Send a heart" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about container" id="about" aria-labelledby="aboutHeading">
+      <div class="about-card">
+        <div class="about-copy">
+          <h2 class="script" id="aboutHeading" data-i18n="aboutTitle">About me ♡</h2>
+          <p data-i18n="aboutText">I'm a creator who loves games, anime and laughing at my own jokes. Expect geeky adventures, cosplay, food experiments and lots of chaotic affection. ♡</p>
+          <button type="button" id="readMore" class="text-link" style="border:0;background:transparent;padding:0"><span data-i18n="readMore">Read more</span><svg class="icon"><use href="#i-arrow"/></svg></button>
+          <div class="about-more" id="aboutMore" data-i18n="aboutMore">One moment I'm talking anime theories, the next I'm trying a new recipe or losing a game spectacularly. Bonus: my German Shepherd puppy is part of the squad! 🐾</div>
+        </div>
+        <img class="about-image" src="about-hilda-dog-polished.png" alt="Ilustração de Hilda Senpai abraçando seu filhote de pastor-alemão" loading="eager" decoding="async" />
+      </div>
+    </section>
+
+    <section class="interests container" id="interests" aria-labelledby="interestsHeading">
+      <div class="section-heading"><span aria-hidden="true">✧</span><h2 class="script" id="interestsHeading" data-i18n="interestsTitle">My Interests</h2><span aria-hidden="true">✧</span></div>
+      <div class="interest-grid">
+        <div class="interest-card"><svg class="icon"><use href="#i-gamepad"/></svg><span data-i18n="interestGames">Games</span></div>
+        <div class="interest-card"><svg class="icon"><use href="#i-ramen"/></svg><span data-i18n="interestAnime">Anime &amp;<br>Manga</span></div>
+        <div class="interest-card"><svg class="icon"><use href="#i-cupcake"/></svg><span data-i18n="interestCooking">Cooking</span></div>
+        <div class="interest-card"><svg class="icon"><use href="#i-torii"/></svg><span data-i18n="interestGeek">Geek<br>Culture</span></div>
+        <div class="interest-card"><svg class="icon"><use href="#i-mask"/></svg><span data-i18n="interestCosplay">Cosplay</span></div>
+      </div>
+    </section>
+
+    <section class="connect" id="connect" aria-labelledby="connectHeading">
+      <div class="container connect-inner">
+        <img class="connect-pup" src="puppy-footer.png" alt="Happy German Shepherd puppy mascot" loading="lazy" />
+        <div class="connect-text">
+          <h2 class="script" id="connectHeading" data-i18n="connectTitle">Let's stay connected! ♡</h2>
+          <p data-i18n="connectText">Follow along for new adventures, games and geeky chaos!</p>
+        </div>
+        <a class="outline-cta" href="https://www.instagram.com/hildasenpai/" target="_blank" rel="noopener noreferrer" id="followButton"><span data-i18n="followMe">Follow me!</span><svg class="icon"><use href="#i-arrow"/></svg></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><span><strong>Hilda Senpai ♡</strong> — <span data-i18n="footerText">Made with purple magic, geek energy and puppy love.</span></span></footer>
+  <nav class="bottom-nav" aria-label="Quick navigation">
+    <a href="#home" class="active" aria-label="Home"><svg class="icon"><use href="#i-home"/></svg></a>
+    <a href="#about" aria-label="About"><svg class="icon"><use href="#i-book"/></svg></a>
+    <a href="#interests" aria-label="Interests"><svg class="icon"><use href="#i-photo"/></svg></a>
+    <a href="#connect" aria-label="Connect"><svg class="icon"><use href="#i-mail"/></svg></a>
+  </nav>
+
+
+  <div role="status" class="toast" id="toast" aria-live="polite"></div>
+
+  <script>
+    // ╔══════════════════════════════════════════════════════════════════╗
+    // ║  EDIT YOUR LINKS HERE. Use complete https:// URLs.               ║
+    // ║  Leave an empty string when you don't have a link yet.           ║
+    // ╚══════════════════════════════════════════════════════════════════╝
+    const SITE_CONFIG = {
+      specialUrl: 'continue.html',
+      socials: {
+        instagram: 'https://www.instagram.com/hildasenpai/',
+        youtube: 'https://www.youtube.com/@hildasenpai',
+        twitch: 'https://www.twitch.tv/hildasenpai',
+        tiktok: 'https://www.tiktok.com/@hildasenpai',
+        x: 'https://x.com/HildaSenpai'
+      }
+    };
+
+    const translations = {
+      en: {
+        navHome:'Home',navAbout:'About',navInterests:'Interests',navConnect:'Connect',
+        greeting:'Welcome to my universe',heroTitle:"Hey, I'm<br>Hilda Senpai! <span class='heart-deco'>♡</span>",
+        heroDesc:'Content creator, gamer, otaku and just a little bit chaotic. ♡',
+        mainCta:"What you're looking for is here 👀",
+        aboutTitle:'About me ♡',aboutText:"I'm a creator who loves games, anime and laughing at my own jokes. Expect geeky adventures, cosplay, food experiments and lots of chaotic affection. ♡",
+        readMore:'Read more',readLess:'Show less',aboutMore:"One moment I'm talking anime theories, the next I'm trying a new recipe or losing a game spectacularly. Bonus: my German Shepherd puppy is part of the squad! 🐾",
+        interestsTitle:'My Interests',interestGames:'Games',interestAnime:'Anime &amp;<br>Manga',interestCooking:'Cooking',interestGeek:'Geek<br>Culture',interestCosplay:'Cosplay',
+        connectTitle:"Let's stay connected! ♡",connectText:'Follow along for new adventures, games and geeky chaos!',followMe:'Follow me!',
+        footerText:'Made with purple magic, geek energy and puppy love.',
+        missingSocial:'This social link is coming soon! ♡',liked:'A heart for you too! ♡',loadingTitle:'Opening your secret portal...',loadingSubtitle:'A little magic and we are there! ♡',loadingDirect:'Go now ↗'
+      },
+      pt: {
+        navHome:'Início',navAbout:'Sobre mim',navInterests:'Interesses',navConnect:'Redes',
+        greeting:'Bem-vindo ao meu universo',heroTitle:"Oi, eu sou a<br>Hilda Senpai! <span class='heart-deco'>♡</span>",
+        heroDesc:'Criadora de conteúdo, gamer, otaku e (um pouco) caótica. ♡',
+        mainCta:'O que você procura está aqui 👀',
+        aboutTitle:'Sobre mim ♡',aboutText:'Sou uma criadora apaixonada por jogos, animes e boas risadas! Aqui você encontra um mix de gameplay, humor, cosplay, aventuras culinárias e muito carinho. ♡',
+        readMore:'Ler mais',readLess:'Mostrar menos',aboutMore:'Uma hora estou falando de teorias de anime; na outra, tentando uma receita ou perdendo feio em um jogo. Bônus: meu filhote de pastor-alemão faz parte da equipe! 🐾',
+        interestsTitle:'Meus Interesses',interestGames:'Games',interestAnime:'Anime e<br>Mangá',interestCooking:'Culinária',interestGeek:'Cultura<br>Geek',interestCosplay:'Cosplay',
+        connectTitle:'Vamos ficar conectados? ♡',connectText:'Siga minhas redes e acompanhe todas as novidades!',followMe:'Me siga!',
+        footerText:'Feito com magia roxa, energia geek e amor de filhotinho.',
+        missingSocial:'Essa rede social será adicionada em breve! ♡',liked:'Um coração pra você também! ♡',loadingTitle:'Abrindo seu portal secreto...',loadingSubtitle:'Só um pouquinho de magia e chegamos lá! ♡',loadingDirect:'Ir agora ↗'
+      }
+    };
+
+    // Pick the primary language configured in the visitor's browser.
+    // Portuguese (pt, pt-BR, pt-PT, etc.) uses Portuguese; everything else uses English.
+    const browserLocale = (navigator.languages && navigator.languages.length
+      ? navigator.languages[0]
+      : navigator.language) || 'en';
+    const initialLanguage = /^pt(?:-|_|$)/i.test(browserLocale) ? 'pt' : 'en';
+    let language = initialLanguage;
+    let toastTimer;
+    const toast = document.getElementById('toast');
+    function showToast(message) {
+      clearTimeout(toastTimer);
+      toast.textContent = message;
+      toast.classList.add('show');
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 2900);
+    }
+    function setLanguage(lang) {
+      language = lang;
+      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+      document.title = lang === 'pt' ? 'Hilda Senpai ♡ | Gamer, Otaku & Caos' : 'Hilda Senpai ♡ | Gamer, Otaku & Chaos';
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key] !== undefined) el.innerHTML = translations[lang][key];
+      });
+      if (document.getElementById('aboutMore').classList.contains('visible')) {
+        document.querySelector('#readMore [data-i18n]').textContent = translations[lang].readLess;
+      }
+      document.getElementById('languageToggle').textContent = lang === 'en' ? 'EN / PT' : 'PT / EN';
+      document.getElementById('languageToggle').setAttribute('aria-label', lang === 'en' ? 'Mudar para português' : 'Switch to English');
+    }
+    document.getElementById('languageToggle').addEventListener('click', () => setLanguage(language === 'en' ? 'pt' : 'en'));
+
+    const menuButton = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    function closeMenu() {mobileMenu.classList.remove('is-open'); menuButton.setAttribute('aria-expanded','false')}
+    menuButton.addEventListener('click', () => {
+      let open = mobileMenu.classList.toggle('is-open');menuButton.setAttribute('aria-expanded',String(open));
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', e => {if(e.key === 'Escape') closeMenu()});
+    document.addEventListener('click', e => {if(!e.target.closest('.site-header')) closeMenu()});
+
+    const specialButton = document.getElementById('specialLink');
+    function updatePortalLink() {
+      const url = new URL(SITE_CONFIG.specialUrl, location.href);
+      url.searchParams.set('lang', language);
+      specialButton.href = url.href;
+    }
+    updatePortalLink();
+    document.getElementById('languageToggle').addEventListener('click', updatePortalLink);
+    document.querySelectorAll('[data-social]').forEach(link => {
+      const key = link.dataset.social;
+      const url = SITE_CONFIG.socials[key];
+      if (url) {link.href = url;link.target = '_blank';link.rel = 'noopener noreferrer'}
+      else {link.href = '#connect';link.addEventListener('click', e => {e.preventDefault();showToast(translations[language].missingSocial)})}
+    });
+    const follow = document.getElementById('followButton');
+    if (SITE_CONFIG.socials.instagram) follow.href = SITE_CONFIG.socials.instagram;
+
+    const more = document.getElementById('aboutMore');
+    document.getElementById('readMore').addEventListener('click', () => {
+      const isOpen = more.classList.toggle('visible');
+      document.querySelector('#readMore [data-i18n]').textContent = translations[language][isOpen ? 'readLess' : 'readMore'];
+    });
+    const likeButton = document.getElementById('likeButton');
+    likeButton.addEventListener('click', () => {
+      const liked = likeButton.classList.toggle('is-liked');
+      likeButton.setAttribute('aria-pressed',String(liked));
+      showToast(translations[language].liked);
+    });
+
+    const navLinks = document.querySelectorAll('.bottom-nav a');
+    const observer = new IntersectionObserver(entries => {
+      for (const entry of entries) if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+      }
+    }, {rootMargin:'-35% 0px -55% 0px'});
+    document.querySelectorAll('main > section').forEach(section => observer.observe(section));
+    setLanguage(initialLanguage);
+  </script>
+</body>
+</html>
